@@ -13,22 +13,6 @@
 ## The inverse of the matrix is calculated by using a canned function
 ## from the R library called, 'solve()'.
 
-## The second Function 'cacheSolve' checks to see whether it
-## already has values stored in the cache, AND whether the input matrix's 
-## values have changed from what was stored at last execution. 
-## If the matrix values have changed, then the inverse already stored 
-## in the cache, is no longer correct for the purpose, as it no longer 
-## matches the matrix currently being provided as input.
-## If it does already have the correct result stored in the cache, then 
-## it skips calculating a new inverse, and simply retrieves it from the 
-## cache and displays it at the console.
-## If it does not have the correct results stored in the cache, or it does
-## not have any values in the cache at all, then it calculates a new inverse, 
-## stores the brand new inverse results in the cache, and stores the new matrix 
-## values just acquired, in a global variable that can be accessed again at 
-## the next successive execution to determine whether the input matrix has 
-## changed again or not.  Finally, it displays the results at the console.
-
 mycache <- NULL
 olddata <- NULL
 
@@ -45,6 +29,22 @@ makeCacheMatrix <- function(mydata = matrix()) {
         getinverse = getinverse)
 }
 
+## The second Function 'cacheSolve' checks to see whether it
+## already has values stored in the cache, AND whether the input matrix's 
+## values have changed from what was stored at last execution. 
+## If the matrix values have changed, then the inverse already stored 
+## in the cache, is no longer correct for the purpose, as it no longer 
+## matches the matrix currently being provided as input.
+## If it does already have the correct result stored in the cache, then 
+## it skips calculating a new inverse, and simply retrieves it from the 
+## cache and displays it at the console.
+## If it does not have the correct results stored in the cache, or it does
+## not have any values in the cache at all, then it calculates a new inverse, 
+## stores the brand new inverse results in the cache, and stores the new matrix 
+## values just acquired, in a global variable that can be accessed again at 
+## the next successive execution to determine whether the input matrix has 
+## changed again or not.  Finally, it displays the results at the console.       
+        
 cacheSolve <- function(mydata, ...){
     mycache <- mydata$getinverse()
     data <- mydata$getmatrix()    
