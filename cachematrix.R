@@ -1,3 +1,5 @@
+## Student - Carolyn Dalen
+## Organization - Providence Health & Services
 ## The script 'cachematrix' provides an example of lexical scoping
 ## by demonstrating R's ability to pass elements between the global
 ## parent environment of the script and the local environments of 
